@@ -1,6 +1,6 @@
 {% set name = "Flask-JSON" %}
 {% set pname = "flask_json" %}
-{% set version = "0.3.4" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ pname|lower }}
@@ -8,12 +8,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 470835a9df80c283e3cc0a82fef376ba1be712f711ec385332b3e045a7cc91a8
+  sha256: 07945d66024f3b77694ce1db5d1fe83940f2aa3bcad8a608535686be67e4bc48
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -33,7 +33,7 @@ about:
   license: BSD-3-Clause
   home: https://github.com/skozlovf/flask-json
   license_file: LICENSE
-  summary: 'Flask-JSON is a Flask extension providing better JSON support'
+  summary: Flask-JSON is a Flask extension providing better JSON support
 
   description: |
     Flask-JSON is a simple extension that adds better JSON support to Flask application
