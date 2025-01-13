@@ -19,7 +19,7 @@ requirements:
   host:
     - python {{ python_min }}
     - pip
-    - pytest-runner
+    - setuptools
   run:
     - python >={{ python_min }}
     - flask >=0.10
