@@ -7,24 +7,26 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 07945d66024f3b77694ce1db5d1fe83940f2aa3bcad8a608535686be67e4bc48
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python
+    - python {{ python_min }}
     - pip
     - pytest-runner
   run:
-    - python
+    - python >={{ python_min }}
     - flask >=0.10
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - flask_json
 
